@@ -1,13 +1,7 @@
 from flask import Flask
-from flask import render_template
+from src.handlers.DefaultHandler import default
+from src.handlers.PropertyHandler import property
 
 app = Flask(__name__)
-
-@app.route("/")
-@app.route("/login")
-@app.route("/signup")
-def home():
-    return render_template("login.html")
-
-if __name__ == '__main__':
-      app.run(host="localhost", port=80, debug=True)
+app.register_blueprint(default)
+app.register_blueprint(property)

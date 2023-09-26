@@ -3,7 +3,7 @@
 
 
 ### Setup
-#### make setup
+make setup
 
 ### Run server
-#### flask run
+flask run

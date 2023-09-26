@@ -101,6 +101,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 50%;
 }
 .form-content .login-form,
 .form-content .signup-form{
@@ -221,4 +222,33 @@ body{
   position: relative; 
   top: 10px;
   cursor: pointer
+}
+
+.summary {
+  height: 400px; 
+  width: 90%;
+  color: #420098;
+  font-weight: 600;
+}
+
+.sum-content {
+  text-align: right;
+}
+
+.sum-strike {
+  color: red;
+}
+
+.sum-title {
+  color: black;
+  font-size: larger;
+}
+
+.sum-img {
+  opacity: 30%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 424px;
+  height: 476px;
 }
