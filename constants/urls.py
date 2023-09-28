@@ -3,11 +3,28 @@ URLS = {
     "realtyUS": "https://realty-in-us.p.rapidapi.com"
 }
 
-endpoints = {
-    "details": "properties/v3/detail",
-    "list": "properties/v3/list",
-    "listSimilar": "properties/v3/list-similar-homes",
-    "getPhotos": "properties/v3/get-photos",
-    "getCommuteTime": "properties/v3/get-commute-time",
-    "getSurroundings": "properties/v3/get-surroundings",
+PROPERTY_V3_ROUTE = "properties/v3"
+MORTGAGE_V2_ROUTE = "mortgage/v2"
+MORTGAGE_V1_ROUTE = "mortgage"
+FINANCE_V1_ROUTE = "finance"
+
+propertyEndpoints = {
+    "details": f"{PROPERTY_V3_ROUTE}/detail",
+    "list": f"{PROPERTY_V3_ROUTE}/list",
+    "listSimilar": f"{PROPERTY_V3_ROUTE}/list-similar-homes",
+    "getPhotos": f"{PROPERTY_V3_ROUTE}/get-photos",
+    "getCommuteTime": f"{PROPERTY_V3_ROUTE}/get-commute-time",
+    "getSurroundings": f"{PROPERTY_V3_ROUTE}/get-surroundings"
+}
+
+mortgageEndpoints = {
+    "checkRates": f"{MORTGAGE_V2_ROUTE}/check-rates",
+    "calculate": f"{MORTGAGE_V2_ROUTE}/calculate",
+    
+    "calculateAffordability": f"{MORTGAGE_V1_ROUTE}/calculate-affordability",
+    "checkEquityRates": f"{MORTGAGE_V1_ROUTE}/check-equity-rates",
+}
+
+financeEndpoints = {
+    "rates": f"{FINANCE_V1_ROUTE}/rates",
 }

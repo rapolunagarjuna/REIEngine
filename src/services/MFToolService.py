@@ -1,17 +1,17 @@
-from constants.urls import URLS, propertyEndpoints
+from constants.urls import URLS, mortgageEndpoints, financeEndpoints
 import requests
 
 # Store it via KMS in future 
 APIKEY = 'b5d50eadecmshae6f3750c658061p1f6953jsnbf3a1e1a21b1'
 HOST = "realty-in-us.p.rapidapi.com"
 
-class PropertyService:
+class MFToolService:
 
     @staticmethod
-    def getPropertyDetails(params):
+    def checkRates(params):
         url = URLS.get("realtyUS")
         response = requests.get(
-            f"{url}/{propertyEndpoints.get('details')}",
+            f"{url}/{mortgageEndpoints.get('checkRates')}",
             headers={
                 'X-RapidAPI-Key': APIKEY,
                 'X-RapidAPI-Host': HOST
@@ -26,50 +26,14 @@ class PropertyService:
             }
         
         response = response.json()
-        print("getPropertyDetails response: ", response)
+        print("mortgate checkRates response: ", response)
         return response
     
     @staticmethod
-    def getPropertyList(params):
-        url = URLS.get("realtyUS")
-        response = requests.post(
-            f"{url}/{propertyEndpoints.get('list')}",
-            headers={
-                'content-type': 'application/json',
-                'X-RapidAPI-Key': APIKEY,
-                'X-RapidAPI-Host': HOST
-            },
-            json={
-                "limit": 200,
-                "offset": 0,
-                "postal_code": '02125',
-                "status": [
-                    'for_sale',
-                    'ready_to_build'
-                ],
-                "sort": {
-                    "direction": 'desc',
-                    "field": 'list_date'
-                }
-            } #params
-        )
-
-        if response.status_code != 200:
-            return {
-                "success": False,
-                "status_code": response.status_code
-            }
-        
-        response = response.json()
-        print("getPropertyList response: ", response)
-        return response
-
-
-    @staticmethod
-    def getSimilarPropertyList(params):
+    def calculate(params):
         url = URLS.get("realtyUS")
         response = requests.get(
-            f"{url}/{propertyEndpoints.get('listSimilar')}",
+            f"{url}/{mortgageEndpoints.get('calculate')}",
             headers={
                 'X-RapidAPI-Key': APIKEY,
                 'X-RapidAPI-Host': HOST
@@ -84,46 +48,20 @@ class PropertyService:
             }
         
         response = response.json()
-        print("getSimilarPropertyList response: ", response)
-        return response
-
-    @staticmethod
-    def getPropertyPhotos(params):
-        url = URLS.get("realtyUS")
-        response = requests.get(
-            f"{url}/{propertyEndpoints.get('getPhotos')}",
-            headers={
-                'X-RapidAPI-Key': APIKEY,
-                'X-RapidAPI-Host': HOST
-            },
-            params=params
-        )
-
-        if response.status_code != 200:
-            return {
-                "success": False,
-                "status_code": response.status_code
-            }
-        
-        response = response.json()
-        print("getPropertyPhotos response: ", response)
+        print("mortgate calculate response: ", response)
         return response
     
+
     @staticmethod
-    def getCommuteTime(params):
+    def calculateAffordability(params):
         url = URLS.get("realtyUS")
         response = requests.get(
-            f"{url}/{propertyEndpoints.get('getCommuteTime')}",
+            f"{url}/{mortgageEndpoints.get('calculateAffordability')}",
             headers={
                 'X-RapidAPI-Key': APIKEY,
                 'X-RapidAPI-Host': HOST
             },
-            params={
-                "destination_address": '1 South point drive, Dorchester',
-                "property_id": "1509681899",
-                "transportation_type": 'walking',
-                "with_traffic": 'false'
-            }
+            params=params
         )
 
         if response.status_code != 200:
@@ -133,23 +71,20 @@ class PropertyService:
             }
         
         response = response.json()
-        print("getPropertyPhotos response: ", response)
+        print("calculateAffordability response: ", response)
         return response
-
+    
 
     @staticmethod
-    def getSurroundings(params):
+    def checkEquityRates(params):
         url = URLS.get("realtyUS")
         response = requests.get(
-            f"{url}/{propertyEndpoints.get('getSurroundings')}",
+            f"{url}/{mortgageEndpoints.get('checkEquityRates')}",
             headers={
                 'X-RapidAPI-Key': APIKEY,
                 'X-RapidAPI-Host': HOST
             },
-            params={
-                "property_id": "1509681899",
-                "enable_flood": 'false'
-            }
+            params=params
         )
 
         if response.status_code != 200:
@@ -159,5 +94,28 @@ class PropertyService:
             }
         
         response = response.json()
-        print("getPropertyPhotos response: ", response)
+        print("checkEquityRates response: ", response)
+        return response
+    
+
+    @staticmethod
+    def financeRates(params):
+        url = URLS.get("realtyUS")
+        response = requests.get(
+            f"{url}/{financeEndpoints.get('rates')}",
+            headers={
+                'X-RapidAPI-Key': APIKEY,
+                'X-RapidAPI-Host': HOST
+            },
+            params=params
+        )
+
+        if response.status_code != 200:
+            return {
+                "success": False,
+                "status_code": response.status_code
+            }
+        
+        response = response.json()
+        print("financeRates response: ", response)
         return response
