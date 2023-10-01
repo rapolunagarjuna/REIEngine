@@ -1,4 +1,5 @@
-from constants.urls import URLS, endpoints
+from constants.urls import URLS
+from constants.urls import agentEndpoints
 import requests
 
 # Store it via KMS in future 
@@ -15,7 +16,7 @@ class AgentService:
     @staticmethod
     def getAgentList(params):
         response = requests.get(
-            f"{URL}/{endpoints.get('agentList')}",
+            f"{URL}/{agentEndpoints.get('agentList')}",
             headers=HEADERS,
             params=params
         )
@@ -33,7 +34,7 @@ class AgentService:
     @staticmethod
     def getAgentProfile(params):
         response = requests.get(
-            f"{URL}/{endpoints.get('agentProfile')}",
+            f"{URL}/{agentEndpoints.get('agentProfile')}",
             headers=HEADERS,
             params=params
         )
@@ -51,7 +52,7 @@ class AgentService:
     @staticmethod
     def getAgentReviews(params):
         response = requests.get(
-            f"{URL}/{endpoints.get('agentReviews')}",
+            f"{URL}/{agentEndpoints.get('agentReviews')}",
             headers=HEADERS,
             params=params
         )
@@ -69,7 +70,7 @@ class AgentService:
     @staticmethod
     def getAgentRecommendations(params):
         response = requests.get(
-            f"{URL}/{endpoints.get('agentRecommendations')}",
+            f"{URL}/{agentEndpoints.get('agentRecommendations')}",
             headers=HEADERS,
             params=params
         )
@@ -87,7 +88,7 @@ class AgentService:
     @staticmethod
     def getAgentListings(params):
         response = requests.get(
-            f"{URL}/{endpoints.get('agentListings')}",
+            f"{URL}/{agentEndpoints.get('agentListings')}",
             headers=HEADERS,
             params=params
         )
