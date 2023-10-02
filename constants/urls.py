@@ -8,6 +8,7 @@ MORTGAGE_V2_ROUTE = "mortgage/v2"
 MORTGAGE_V1_ROUTE = "mortgage"
 FINANCE_V1_ROUTE = "finance"
 AGENT_V1_ROUTE = "agent"
+SCHOOLS_V1_ROUTE = "finance"
 
 propertyEndpoints = {
     "details": f"{PROPERTY_V3_ROUTE}/detail",
@@ -36,4 +37,9 @@ agentEndpoints = {
     "agentReviews":f"{AGENT_V1_ROUTE}/get-reviews",
     "agentRecommendations":f"{AGENT_V1_ROUTE}/get-recommendations",
     "agentListings": f"{AGENT_V1_ROUTE}/get-listings",   
+
+schoolsEndpoints = {
+    "list": f"{SCHOOLS_V1_ROUTE}/rates",
+    "detail": f"{SCHOOLS_V1_ROUTE}/detail",
+    "getSchoolDistrict": f"{SCHOOLS_V1_ROUTE}/get-school-disctict",
 }
