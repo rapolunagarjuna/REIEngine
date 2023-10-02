@@ -7,6 +7,7 @@ PROPERTY_V3_ROUTE = "properties/v3"
 MORTGAGE_V2_ROUTE = "mortgage/v2"
 MORTGAGE_V1_ROUTE = "mortgage"
 FINANCE_V1_ROUTE = "finance"
+SCHOOLS_V1_ROUTE = "finance"
 
 propertyEndpoints = {
     "details": f"{PROPERTY_V3_ROUTE}/detail",
@@ -27,4 +28,10 @@ mortgageEndpoints = {
 
 financeEndpoints = {
     "rates": f"{FINANCE_V1_ROUTE}/rates",
+}
+
+schoolsEndpoints = {
+    "list": f"{SCHOOLS_V1_ROUTE}/rates",
+    "detail": f"{SCHOOLS_V1_ROUTE}/detail",
+    "getSchoolDistrict": f"{SCHOOLS_V1_ROUTE}/get-school-disctict",
 }
