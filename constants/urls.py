@@ -36,7 +36,8 @@ agentEndpoints = {
     "agentProfile":f"{AGENT_V1_ROUTE}/get-profile",
     "agentReviews":f"{AGENT_V1_ROUTE}/get-reviews",
     "agentRecommendations":f"{AGENT_V1_ROUTE}/get-recommendations",
-    "agentListings": f"{AGENT_V1_ROUTE}/get-listings",   
+    "agentListings": f"{AGENT_V1_ROUTE}/get-listings"
+}
 
 schoolsEndpoints = {
     "list": f"{SCHOOLS_V1_ROUTE}/rates",
