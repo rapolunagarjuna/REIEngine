@@ -1,4 +1,4 @@
-from constants.urls import URLS, schoolsEndpoint
+from constants.urls import URLS, schoolsEndpoints
 import requests
 
 # Store it via KMS in future 
