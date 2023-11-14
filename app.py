@@ -9,19 +9,21 @@ from mongoengine import connect
 
 from constants.uri import MONGODB_URI
 
-application = Flask(__name__)
+app = Flask(__name__)
 connect(db='realEstate', host=MONGODB_URI);
 
-application.register_blueprint(default)
-application.register_blueprint(property)
-application.register_blueprint(mftool)
-application.register_blueprint(schools)
-application.register_blueprint(user)
-application.register_blueprint(calculator)
+app.register_blueprint(default)
+app.register_blueprint(property)
+app.register_blueprint(mftool)
+app.register_blueprint(schools)
+app.register_blueprint(user)
+app.register_blueprint(calculator)
 
 # run the app.
 if __name__ == "__main__":
     # Setting debug to True enables debug output. This line should be
     # removed before deploying a production app.
-    application.debug = True
-    application.run()
+    app.host = "0.0.0.0"
+    app.port = 5000
+    app.debug = True
+    app.run()
