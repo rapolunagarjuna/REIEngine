@@ -2,8 +2,11 @@
 ## Backend for Real Estate Investment Project CS682
 
 
-### Setup
-make setup
+### Setup a virtual environment
+python3 -m venv venv
+
+### start the virtual environment
+source venv/bin/activate
 
 ### Run server
 flask run
