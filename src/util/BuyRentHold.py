@@ -1,9 +1,15 @@
 class BuyRentHold:
     def __init__(self, offer_price_USD, units, insurance_USD, property_tax_USD, defaults):
         
+        
+
+        if not isinstance(units, int):
+            UNITS = 1
+        else:
+            UNITS = units
 
         
-        self.property_info = PropertyInfo(offer_price_USD, units, defaults)
+        self.property_info = PropertyInfo(offer_price_USD, UNITS, defaults)
         self.purchase_info = PurchaseInfo(offer_price_USD, defaults)
         self.income_info = IncomeInfo(defaults["incomeInfo"]["grossRents"], defaults)
         self.operating_expenses = OperatingExpenses(
