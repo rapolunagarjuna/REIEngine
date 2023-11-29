@@ -31,7 +31,30 @@ class PropertyService:
     
     @staticmethod
     def getPropertyList(params):
+        city = params.get("city")
+        state_code = params.get("stateCode")
+        postal_code = params.get("postalCode")
+
         url = URLS.get("realtyUS")
+        data = {
+            "limit": 200,
+            "offset": 0,
+            "status": [
+                'for_sale',
+                'ready_to_build'
+            ],
+            "sort": {
+                "direction": 'desc',
+                "field": 'list_date'
+            }
+        }
+
+        if postal_code:
+            data["postal_code"] = postal_code
+        else:
+            data["city"] = city
+            data["state_code"] = state_code
+
         response = requests.post(
             f"{url}/{propertyEndpoints.get('list')}",
             headers={
@@ -39,19 +62,7 @@ class PropertyService:
                 'X-RapidAPI-Key': APIKEY,
                 'X-RapidAPI-Host': HOST
             },
-            json={
-                "limit": 200,
-                "offset": 0,
-                "postal_code": '02125',
-                "status": [
-                    'for_sale',
-                    'ready_to_build'
-                ],
-                "sort": {
-                    "direction": 'desc',
-                    "field": 'list_date'
-                }
-            } #params
+            json=data
         )
 
         if response.status_code != 200:

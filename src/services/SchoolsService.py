@@ -1,4 +1,4 @@
-from constants.urls import URLS, schoolsEndpoint
+from constants.urls import URLS, schoolsEndpoints
 import requests
 
 # Store it via KMS in future 
@@ -11,7 +11,7 @@ class SchoolsService:
     def getSchoolsList(params):
         url = URLS.get("realtyUS")
         response = requests.get(
-            f"{url}/{schoolsEndpoint.get('list')}",
+            f"{url}/{schoolsEndpoints.get('list')}",
             headers={
                 'X-RapidAPI-Key': APIKEY,
                 'X-RapidAPI-Host': HOST
@@ -33,7 +33,7 @@ class SchoolsService:
     def getSchoolsDetail(params):
         url = URLS.get("realtyUS")
         response = requests.get(
-            f"{url}/{schoolsEndpoint.get('detail')}",
+            f"{url}/{schoolsEndpoints.get('detail')}",
             headers={
                 'X-RapidAPI-Key': APIKEY,
                 'X-RapidAPI-Host': HOST
@@ -55,7 +55,7 @@ class SchoolsService:
     def getSchoolsDistrict(params):
         url = URLS.get("realtyUS")
         response = requests.get(
-            f"{url}/{schoolsEndpoint.get('getSchoolDistrict')}",
+            f"{url}/{schoolsEndpoints.get('getSchoolDistrict')}",
             headers={
                 'X-RapidAPI-Key': APIKEY,
                 'X-RapidAPI-Host': HOST
