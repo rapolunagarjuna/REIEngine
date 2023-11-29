@@ -29,6 +29,7 @@ class AgentService:
         
         response = response.json()
         print("getAgentList response: ", response)
+        
         return response
     
     @staticmethod

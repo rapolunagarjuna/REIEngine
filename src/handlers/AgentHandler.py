@@ -1,10 +1,10 @@
 from flask import Blueprint, request, jsonify
 from src.services.AgentService import AgentService
 
-property = Blueprint("agent", __name__, url_prefix="/agent")
+agent = Blueprint("agent", __name__, url_prefix="/agent")
 
 
-@property.route("/list", methods=['GET'])
+@agent.route("/list", methods=['GET'])
 def getAgentList():
     params = request.args
     print("Params for getAgentList",params)
@@ -12,7 +12,7 @@ def getAgentList():
     agentlist = AgentService.getAgentList(params)
     return jsonify(agentlist)
 
-@property.route("/get-profile", methods=['GET'])
+@agent.route("/get-profile", methods=['GET'])
 def getAgentProfile():
     params = request.args
     print("Params for getAgentProfile",params)
@@ -20,7 +20,7 @@ def getAgentProfile():
     agentProfile = AgentService.getAgentProfile(params)
     return jsonify(agentProfile)
 
-@property.route("/get-reviews", methods=['GET'])
+@agent.route("/get-reviews", methods=['GET'])
 def getAgentReviews():
     params = request.args
     print("Params for getAgentReviews",params)
@@ -28,7 +28,7 @@ def getAgentReviews():
     agentReviews = AgentService.getAgentReviews(params)
     return jsonify(agentReviews)
 
-@property.route("/get-recommendations", methods=['GET'])
+@agent.route("/get-recommendations", methods=['GET'])
 def getAgentRecommendations():
     params = request.args
     print("Params for getAgentRecommendations",params)
@@ -36,7 +36,7 @@ def getAgentRecommendations():
     agentReccommendations = AgentService.getAgentRecommendations(params)
     return jsonify(agentReccommendations)
 
-@property.route("/get-listings", methods=['GET'])
+@agent.route("/get-listings", methods=['GET'])
 def getAgentListings():
     params = request.args
     print("Params for getAgentListings",params)

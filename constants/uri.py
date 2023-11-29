@@ -1,0 +1,1 @@
+MONGODB_URI = "mongodb+srv://rapolunagarjuna:Test1234@realestate.kk9djfh.mongodb.net/"
