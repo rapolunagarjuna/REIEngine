@@ -6,10 +6,13 @@ from src.handlers.SchoolsHandler import schools
 from src.handlers.UserHandler import user
 from src.handlers.CalculatorHandler import calculator
 from mongoengine import connect
+from flask_cors import CORS
+
 
 from constants.uri import MONGODB_URI
 
 app = Flask(__name__)
+CORS(app)
 connect(db='realEstate', host=MONGODB_URI);
 
 app.register_blueprint(default)
