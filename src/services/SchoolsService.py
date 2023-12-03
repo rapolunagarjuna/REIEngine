@@ -1,8 +1,9 @@
 from constants.urls import URLS, schoolsEndpoints
+from constants.urls import REALTY_API_KEY
 import requests
 
 # Store it via KMS in future 
-APIKEY = 'b5d50eadecmshae6f3750c658061p1f6953jsnbf3a1e1a21b1'
+APIKEY = REALTY_API_KEY
 HOST = "realty-in-us.p.rapidapi.com"
 
 class SchoolsService:
