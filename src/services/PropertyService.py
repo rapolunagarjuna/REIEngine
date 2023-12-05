@@ -21,13 +21,16 @@ class PropertyService:
         )
 
         if response.status_code != 200:
+            print("getPropertyDetails response status code:", response.status_code)
+            print(response.content)
+
             return {
                 "success": False,
                 "status_code": response.status_code
             }
+        print("getPropertyDetails response status code:", response.status_code)
         
         response = response.json()
-        print("getPropertyDetails response: ", response)
         return response
     
     @staticmethod
@@ -71,9 +74,9 @@ class PropertyService:
                 "success": False,
                 "status_code": response.status_code
             }
-        
+        print("getPropertyList response status code:", response.status_code)
         response = response.json()
-        print("getPropertyList response: ", response)
+        
         return response
 
 
@@ -94,9 +97,9 @@ class PropertyService:
                 "success": False,
                 "status_code": response.status_code
             }
+        print("getSimilarPropertyList response status code:", response.status_code)
         
         response = response.json()
-        print("getSimilarPropertyList response: ", response)
         return response
 
     @staticmethod
@@ -116,9 +119,9 @@ class PropertyService:
                 "success": False,
                 "status_code": response.status_code
             }
+        print("getPropertyPhotos response status code:", response.status_code)
         
         response = response.json()
-        print("getPropertyPhotos response: ", response)
         return response
     
     @staticmethod
@@ -143,9 +146,9 @@ class PropertyService:
                 "success": False,
                 "status_code": response.status_code
             }
+        print("getCommuteTime response status code:", response.status_code)
         
         response = response.json()
-        print("getPropertyPhotos response: ", response)
         return response
 
 
@@ -169,7 +172,7 @@ class PropertyService:
                 "success": False,
                 "status_code": response.status_code
             }
+        print("getSurroundings response status code:", response.status_code)
         
         response = response.json()
-        print("getPropertyPhotos response: ", response)
         return response
