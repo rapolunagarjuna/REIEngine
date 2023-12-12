@@ -17,7 +17,7 @@ def signup():
 def login():
     data = request.get_json()
     print("Data for login", data)
-    response = DefaultService.login()
+    response = DefaultService.login(data)
     return jsonify(response)
 
 @default.errorhandler(404)
