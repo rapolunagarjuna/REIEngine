@@ -20,7 +20,7 @@ def trial():
     values = CalculatorService.getTrial(params)
     return jsonify(values)
 
-@calculator.route("/", methods=['POST'])
+@calculator.route("/", methods=['POST', 'PUT'])
 def setCalculator():
     params = request.args
     data = request.get_json()
