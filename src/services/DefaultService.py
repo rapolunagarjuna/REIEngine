@@ -12,7 +12,7 @@ class DefaultService:
             email = data.get("email")
             password = data.get("password")
             user =  UserService.getUserByEmail(email)
-            if user.password == password:
+            if user.get("password") == password:
                 return {"success": True, "user": {"email": email, "userName": user.get("username")}}
             return {"success": False, "message": "Email / Password is incorrect, please retry!"}
         except Exception as e:

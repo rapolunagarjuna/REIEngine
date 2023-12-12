@@ -1,12 +1,17 @@
 from src.models.User import User  # Import the User model
 
+
 class UserService:
 
     @staticmethod
     def getUserByEmail(email):
         try:
-            user = User.find({"email": email})
-            return user
+            user = User.objects(email=email).first()
+            print(user)
+            return {
+                "username": user.username,
+                "password": user.password
+            }
         except Exception as e:
             print(f"An error occurred while searching an user: {str(e)}")
             return {"message": f"Unable to find user with email: {email}", "status_code": 500, "success": False }
