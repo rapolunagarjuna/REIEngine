@@ -3,7 +3,7 @@ URLS = {
     "realtyUS": "https://realty-in-us.p.rapidapi.com"
 }
 
-REALTY_API_KEY = "b52991bf0fmsh814fd63a50b2550p116e59jsn3feaf5366b04"
+REALTY_API_KEY = "b70ca0bf1cmsh5347b030989102ap1ab5cfjsnd3c26ca49a1a"
 
 PROPERTY_V3_ROUTE = "properties/v3"
 MORTGAGE_V2_ROUTE = "mortgage/v2"
