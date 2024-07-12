@@ -1,6 +1,7 @@
 # REIEngine
 ## Backend for Real Estate Investment Project CS682
 
+API documentation: https://github.com/rapolunagarjuna/REIEngine/blob/main/documentation_for_REIEngine.pdf
 
 ### Setup a virtual environment
 python3 -m venv venv
